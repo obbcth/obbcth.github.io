@@ -1,0 +1,106 @@
+﻿<html><head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<script src="bootstrap.min.js"></script>
+
+
+<script src="jquery-2.1.0.min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+</head>
+<body>
+	<div class="container">
+		<hr> <h3>진로희망사유 | 600Byte</h3> <br>
+		<textarea name="aaa" class="aaa" style="width: 100%; height: 15%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="aaaa"></div> 
+		
+		<hr> <h3>자율활동 특기사항 | 3000Byte</h3> <br>
+		<textarea name="jjj" class="jjj" style="width: 100%; height: 40%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="jjjj"></div> 
+		
+		<hr> <h3>봉사활동 특기사항 | 1500Byte</h3> <br>
+		<textarea name="bbb" class="bbb" style="width: 100%; height: 30%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="bbbb"></div> 
+		
+		<hr> <h3>진로활동 특기사항 | 3000Byte</h3> <br>
+		<textarea name="ggg" class="ggg" style="width: 100%; height: 40%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="gggg"></div> 
+		
+		<hr> <h3>개인별 세부능력 및 특기사항 | 1500Byte</h3> <br>
+		<textarea name="ppp" class="ppp" style="width: 100%; height: 20%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="pppp"></div> 
+
+		<hr> <h3>행동특성 및 종합의견 | 3000Byte</h3> <br>
+		<textarea name="hhh" class="hhh" style="width: 100%; height: 40%;" placeholder="여기다가 내용을 붙여넣으세요."></textarea>
+		<hr> <div class="hhhh"></div> 
+	</div>
+  
+<script>
+$(".aaa").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".aaa").val());
+    $(".aaaa").text(z + "바이트");
+  }
+});
+
+$(".jjj").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".jjj").val());
+    $(".jjjj").text(z + "바이트");
+  }
+});
+
+$(".bbb").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".bbb").val());
+    $(".bbbb").text(z + "바이트");
+  }
+});
+
+$(".ggg").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".ggg").val());
+    $(".gggg").text(z + "바이트");
+  }
+});
+
+$(".ppp").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".ppp").val());
+    $(".pppp").text(z + "바이트");
+  }
+});
+
+$(".hhh").on({
+  "change keyup input paste" : function(){    
+    var z = getByte($(".hhh").val());
+    $(".hhhh").text(z + "바이트");
+  }
+});
+
+
+	// 현재 입력한 문자의 byte를 계산한다.
+	function getByte(contents) {
+		var str_character;
+		var int_char_count;
+		var int_contents_length;
+
+		int_char_count = 0;
+		int_contents_length = contents.length;
+
+		// 한글과 영문 바이트수 계산하는 부분
+		for ( var k = 0; k < int_contents_length; k++) {
+			str_character = contents.charAt(k);
+
+			if (escape(str_character).length > 4)
+				int_char_count += 3;
+			else
+				int_char_count++;
+		}
+
+		return int_char_count;
+	}
+
+</script></body></html>
