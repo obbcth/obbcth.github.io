@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="stylesheet" href="bootstrap.min.css">
+	<link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+	<script src="bootstrap.min.js"></script>
+
+
+<script src="jquery-2.1.0.min.js"></script>
+  <meta charset="utf-8">
+  <title>확률 계산기 (천장 X)</title>
+</head>
+<body>
+	<div class="container">
+
+<h2>확률 계산기 (천장 X)</h2>
+
+<form oninput="x.value=((1-Math.pow(1-parseFloat(a.value)*0.01, parseFloat(b.value)))*100).toFixed(4)">
+카트 확률 : <input type="number" id="a" value="0.05">%<br>
+시도 횟수 : <input type="number" id="b" value="50">번<br><br>
+<output name="x" for="a b"></output> % 확률로 뽑힙니다.
+</form>
+
+<p><strong>Note:</strong> The output element is not supported in Edge 12 (or earlier).</p>
+
+</div>
+</body>
+</html>
